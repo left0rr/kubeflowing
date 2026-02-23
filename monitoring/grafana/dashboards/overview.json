@@ -1,0 +1,37 @@
+{
+  "id": null,
+  "title": "GPON Predictive Maintenance Overview",
+  "tags": ["mlops", "gpon"],
+  "timezone": "browser",
+  "schemaVersion": 38,
+  "version": 1,
+  "refresh": "30s",
+  "panels": [
+    {
+      "id": 1,
+      "title": "Prediction Requests / sec",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 0 },
+      "targets": [
+        {
+          "datasource": "Prometheus",
+          "expr": "rate(http_requests_total{job=\"fastapi-serving\", path=\"/predict\"}[1m])",
+          "legendFormat": "req/s"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "High-Risk Predictions (prob > 0.7)",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 6, "y": 0 },
+      "targets": [
+        {
+          "datasource": "Prometheus",
+          "expr": "sum(increase(gpon_failure_predicted_total[1h]))",
+          "legendFormat": "alerts/hr"
+        }
+      ]
+    }
+  ]
+}
