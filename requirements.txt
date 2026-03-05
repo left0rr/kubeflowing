@@ -1,0 +1,32 @@
+# Core ML
+xgboost>=2.0.0
+scikit-learn>=1.4.0
+pandas>=2.2.0
+numpy>=1.26.0
+
+# MLflow & Experiment Tracking
+mlflow>=2.11.0
+
+# Kubeflow Pipelines
+kfp>=2.7.0
+
+# Data Validation & Drift Detection
+evidently>=0.4.30
+
+# API & Serving
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.6.0
+
+# Monitoring
+prometheus_client>=0.20.0
+
+# Storage & DB clients
+boto3>=1.34.0
+psycopg2-binary>=2.9.9
+
+# Utilities
+python-dotenv>=1.0.0
+httpx>=0.27.0
+pytest>=8.1.0
+ruff>=0.3.0
